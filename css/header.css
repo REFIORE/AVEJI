@@ -10,11 +10,29 @@
     top: 12px;
 }
 
-.header_top-nav {
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.header-wrap {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    align-items: flex-start;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.nav {
     display: flex;
+    justify-content: right;
+    align-content: center;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 8px;
     position: absolute;
     width: 98px;
@@ -23,7 +41,7 @@
     top: 12px;
 }
 
-.header_bottom {
+.nav__list {
     width: 47px;
     height: 21px;
     font-family: 'Roboto';
@@ -35,26 +53,62 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.header_number-text {
-    position: absolute;
-    width: 140px;
-    height: 21px;
-    left: 1268px;
-    top: 12px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: #212529;
+.nav__item {
+    padding: 8px;
 }
 
-.header_logo {
+.phone__text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.header__logo {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.menu__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 6px;
     position: absolute;
-    width: 70px;
-    height: 74.38px;
-    left: 32px;
-    top: 12px;
+    width: 24px;
+    height: 12px;
+}
+
+.menu__btn span:first-child {
+    position: absolute;
+    top: 0;
+}
+
+.menu__btn span:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.menu__btn span:nth-child(3) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: unset;
+    width: 0.875rem;
 }
