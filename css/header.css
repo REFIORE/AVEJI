@@ -1,0 +1,60 @@
+.header {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    background-color: #FFFFFF;
+    position: absolute;
+    width: 1376px;
+    height: 108px;
+    left: 32px;
+    top: 12px;
+}
+
+.header_top-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 98px;
+    height: 108px;
+    left: 963px;
+    top: 12px;
+}
+
+.header_bottom {
+    width: 47px;
+    height: 21px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #212529;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.header_number-text {
+    position: absolute;
+    width: 140px;
+    height: 21px;
+    left: 1268px;
+    top: 12px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #212529;
+}
+
+.header_logo {
+    position: absolute;
+    width: 70px;
+    height: 74.38px;
+    left: 32px;
+    top: 12px;
+}
