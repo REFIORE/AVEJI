@@ -2,24 +2,40 @@ mixin custom-select(name)
   .header_select
     .header_select-header
       span.header_select-current=name
-header.header
-  .container
-    .header_wrap
-      a.logo(href='')
-        img.header__logo(src="../media/icons/logo.png", alt="Aveji")
-      .nav
-        ul.nav__list
-          li.nav__item
-            a.nav__link-link-text(href='#about') О нас
-          li.nav__item
-            a.nav__link-link-text(href='#works') Проекты
-          li.nav__item
-            a.nav__link-link-text(href='#') Материалы
-          li.nav__item
-            a.nav__link-link-text(href='#reviews') Отзывы
-      a.phone__text(href='tel:79999999999') +7 999 999 99 99
-      button.menu__btn
-          span
-          span
-          span
-          img(src="../media/icons/burger.png", alt="")
+.wrapper
+  .content
+    header.header
+      .container
+        .header_wrap
+          a.logo(href='')
+            img.header__logo(src="../media/icons/logo.png", alt="Aveji")
+          .nav
+            ul.nav__list
+              li.nav__item
+                a.nav__link-link.text(href='#about') О нас
+              li.nav__item
+                a.nav__link-link.text(href='#works') Проекты
+              li.nav__item
+                a.nav__link-link.text(href='#') Материалы
+              li.nav__item
+                a.nav__link-link.text(href='#reviews') Отзывы
+          a.phone.text(href='tel:79999999999') +7 999 999 99 99
+          button.menu__btn
+            span
+            span
+            span
+      main.main
+        section.intro
+          .container
+            .intro-wrap.grid
+            h1.title.title-lg Эксклюзивная и нестандартная мебель для дома
+            p.intro__text Мы можем произвести любую мебель для вашего проекта и найти производственное решение любой задумки.
+            a.btn(href="#feedback") заказать проект
+            .img(src="../media/hero/2.jpg", alt="livingroom")
+            .img.desktop(src="../media/hero/1.jpg", alt="livingroom")
+        section.about
+        section.steps
+        section.projects
+        section.reviews
+        section.contact
+  .footer

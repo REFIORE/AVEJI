@@ -1,114 +1,329 @@
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.content {
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+}
+
 .header {
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-style: normal;
-    background-color: #FFFFFF;
-    position: absolute;
-    width: 1376px;
-    height: 108px;
-    left: 32px;
-    top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    margin-inline: auto;
+    width: min(100% - 1.875rem, 86rem);
 }
 
-.header-wrap {
+.header_wrap {
+    width: 100%;
+    display: flex;
     display: grid;
+    justify-content: space-between;
+    align-items: flex-start;
     grid-template-columns: repeat(18, 1fr);
-    align-items: flex-start;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-.nav {
-    display: flex;
-    justify-content: right;
-    align-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    position: absolute;
-    width: 98px;
-    height: 108px;
-    left: 963px;
-    top: 12px;
-}
-
-.nav__list {
-    width: 47px;
-    height: 21px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: #212529;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    gap: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.nav__item {
-    padding: 8px;
-}
-
-.phone__text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px 20px;
 }
 
 .header__logo {
+    width: 2.5rem;
+    height: 43px;
+    top: 12px;
+    left: 32px;
+    display: flex;
+    justify-content: left;
+    order: 1;
+    display: flex;
+}
+
+.nav {
+    grid-column-start: 13;
+}
+
+.nav__list {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+}
+
+.phone {
+    display: grid;
+    text-align: right;
+    grid-column-start: 16;
+    grid-column-end: 19;
+}
+
+.main {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.title-lg {
+    line-height: 120%;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 1.242rem + 3.79vw, 4.5rem);
+    color: #212529;
+    font-weight: 400;
+    font-family: "Helvetica";
+}
+
+.btn {
+    position: relative;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    text-transform: uppercase;
+    color: #212529;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+}
+
+img {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+    display: block;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
-.menu__btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    align-items: flex-end;
-    padding: 0px;
-    gap: 6px;
-    position: absolute;
-    width: 24px;
-    height: 12px;
+a {
+    text-decoration: none;
 }
 
-.menu__btn span:first-child {
-    position: absolute;
-    top: 0;
+ul {
+    list-style: none;
 }
 
-.menu__btn span:nth-child(2) {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+.text {
+    font-size: 1rem;
+    line-height: 140%;
+    color: #212529;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
 }
 
-.menu__btn span:nth-child(3) {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: unset;
-    width: 0.875rem;
+@media screen and (min-width: 20rem) {
+    .header {
+        padding-top: 0.5rem;
+    }
+
+    .nav,.phone {
+        display: none;
+    }
+
+    .menu__btn {
+        position: fixed;
+        right: max(15px, (100% - 1376px) / 2);
+        top: 1.375rem;
+        z-index: 5;
+        width: 1.5rem;
+        height: 0.75rem;
+    }
+
+    .menu__btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        width: 2.438rem;
+        height: 2.438rem;
+        background: #ffffff;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .menu__btn span {
+        position: relative;
+        display: block;
+        width: 100%;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        height: 0.063rem;
+        background: #212529;
+    }
+
+    .menu__btn span:first-child {
+        position: absolute;
+        top: 0;
+    }
+
+    .menu__btn span:nth-child(2) {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .menu__btn span:nth-child(3) {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: unset;
+        width: 0.875rem;
+    }
+
+    .logo {
+        display: inline-block;
+        width: min(1.625rem);
+        png {
+            width: 100%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+
+    .about, .intro, .steps, .projects, .reviews {
+        padding-bottom: 3rem;
+    }
+
+    .intro {
+        padding-top: 1.25rem;
+    }
+
+    .title {
+        margin-bottom: 1.25rem;
+    }
+
+    .intro__text {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        line-height: 140%;
+        color: #212529;
+        font-weight: 400;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .btn {
+        margin-bottom: 1.5rem;
+        font-size: 1.125rem;
+        line-height: 1.313rem;
+    }
+
+    .btn::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: #212529;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
+        -webkit-transform-origin: right bottom;
+        transform-origin: right bottom;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .img:nth-child(4) {
+        height: 16.25rem;
+    }
+
+    .img img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .img.desktop {
+        display: none;
+    }
+}   
+
+@media screen and (min-width: 64rem) {
+    .header {
+        padding-top: $sm-12;
+        &-wrap {
+            @include grid-col-18;
+            align-items: flex-start;
+        }
+    }
+
+    .logo {
+        width: min(2.5rem);
+    }
+
+    .nav,
+    .phone {
+        display: block;
+    }
+
+    .menu__btn {
+        display: none;
+    }
+
+    .nav {
+        grid-column-start: 13;
+        &__list {
+            gap: 0.5rem;
+            @include flex(flex);
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .phone {
+        text-align: right;
+        grid-column-start: 16;
+        grid-column-end: 19;
+    }
+
+    .about, .intro, .steps, .projects, .reviews {
+        padding-bottom: 7.5rem;
+    }
+
+    .intro {
+        padding-top: 2.438rem;
+    }
+
+    .intro-wrap {
+        row-gap: 2.438rem;
+    }
+
+    .intro__text {
+        font-size: 1.25rem;
+        line-height: 140%;
+    }
+
+    .btn {
+        font-size: 1rem;
+        line-height: 140%;
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    .img:nth-child(4) {
+        height: 30rem;
+    }
 }
