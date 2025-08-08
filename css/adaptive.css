@@ -1,5 +1,4 @@
-html, 
-body {
+html {
   height: 100%;
   scroll-behavior: smooth;
 }
@@ -15,6 +14,7 @@ body {
 
 .content {
     -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
     flex: 1 0 auto;
 }
 
@@ -22,14 +22,38 @@ body {
     font-size: 1rem;
     font-weight: normal;
     font-family: "Roboto", sans-serif;
-    &::-webkit-scrollbar {
-        width: 5px;
-    }
+    line-height: 1;
 }
 
 .container {
     margin-inline: auto;
     width: min(100% - 1.875rem, 86rem);
+}
+
+html, button, input, select, textarea {
+    color: #222;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button {
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    border: none;
 }
 
 .title-lg {
@@ -42,8 +66,11 @@ body {
 }
 
 .heading-md-24 {
-    @include mdFontSize_24;
-    @include fontSize($font-family: false);
+    font-size: 1.5rem;
+    line-height: 33px;
+    color: #212529;
+    font-weight: 400;
+    font-family: "Helvetica";
 }
 
 .text-md-18 {
@@ -78,13 +105,26 @@ ul {
     font-family: "Roboto", sans-serif;
 }
 
+form {
+    margin: 0;
+}
+
 
 @media screen and (min-width: 20rem) {
     .header {
         padding-top: 0.5rem;
     }
 
-    .nav,.phone {
+    .logo {
+        display: inline-block;
+        width: 1.625rem;
+    }
+
+    .logo img {
+        width: 100%;
+    }
+
+    .nav, .phone {
         display: none;
     }
 
@@ -362,6 +402,47 @@ ul {
 
     .reviews-card {
         padding: 2rem;
+    }
+
+
+    .contact {
+        padding-bottom: 3.75rem;
+    }
+
+    .contact__img {
+        display: none;
+    }
+
+    .contact-desc-top {
+        margin-bottom: 2rem;
+    }
+
+    .form {
+        margin-bottom: 1.75rem;
+    }
+
+    .form-inner {
+        margin-bottom: 1.25rem;
+    }
+
+
+    .menu-logo {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 1rem;
+        width: 1.625rem;
+    }
+
+    .menu-list, .menu .social-list {
+        gap: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
 
