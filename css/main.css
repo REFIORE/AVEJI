@@ -3,15 +3,6 @@
     unicode-bidi: isolate;
 }
 
-.title-lg {
-    line-height: 120%;
-    text-transform: uppercase;
-    font-size: clamp(2rem, 1.242rem + 3.79vw, 4.5rem);
-    color: #212529;
-    font-weight: 400;
-    font-family: "Helvetica";
-}
-
 .btn {
     position: relative;
     -webkit-transition: 0.3s;
@@ -34,4 +25,18 @@
     border: 0;
     display: block;
     max-width: 100%;
+}
+
+.steps-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.steps__item {
+    border-bottom: 1px solid #212529;
 }
