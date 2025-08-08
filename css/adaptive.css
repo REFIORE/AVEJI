@@ -4,11 +4,7 @@ html {
 }
 
 .wrapper {
-    min-height: 100%;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -107,6 +103,12 @@ ul {
 
 form {
     margin: 0;
+}
+
+img {
+    border: 0;
+    display: block;
+    max-width: 100%;
 }
 
 
@@ -244,7 +246,7 @@ form {
         height: 16.25rem;
     }
 
-    img {
+    .img img {
         width: 100%;
         height: 100%;
         -o-object-fit: cover;
@@ -268,10 +270,6 @@ form {
         display: none;
     }
 
-    .about-box-text {
-        margin-bottom: 2rem;
-    }
-
     .about__text {
         margin-bottom: 1rem;
     }
@@ -282,8 +280,6 @@ form {
 
     .benefits {
         gap: 1.25rem;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -330,21 +326,16 @@ form {
     .projects-list {
         gap: 1.25rem;
         overflow-x: auto;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         -webkit-box-align: stretch;
         -ms-flex-align: stretch;
         align-items: stretch;
         scroll-padding: 1.25rem;
-        -ms-scroll-snap-type: x mandatory;
-        scroll-snap-type: x mandatory;
     }
 
     .projects__item {
-        width: 70%;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
+        height: 580px;
+        width: 445px;
         overflow: hidden;
         position: relative;
         scroll-snap-align: center;
@@ -366,27 +357,23 @@ form {
     }
 
     .projects-desc {
+        height: 30px;
+        width: 405px;
         padding: 0.75rem;
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
         gap: 2rem;
-        -webkit-transition: 0.3s;
         transition: 0.3s;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
         background: rgba(33, 37, 41, 0.5);
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 
     .projects__text {
+        width: 405px;
         color: #ffffff;
     }
 
@@ -407,10 +394,6 @@ form {
 
     .contact {
         padding-bottom: 3.75rem;
-    }
-
-    .contact__img {
-        display: none;
     }
 
     .contact-desc-top {
@@ -436,8 +419,6 @@ form {
 
     .menu-list, .menu .social-list {
         gap: 20px;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -453,8 +434,6 @@ form {
     .footer-wrap {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -478,8 +457,6 @@ form {
 
     .footer-policy {
         gap: 0.5rem;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -496,12 +473,18 @@ form {
         order: -1;
         gap: 2.438rem;
         margin-bottom: 1.75rem;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
+    }
+
+    .about-box-text {
+        margin-bottom: 2rem;
+    }
+
+    .contact__img {
+        display: none;
     }
 }
 
@@ -568,20 +551,20 @@ form {
 
 
 @media screen and (min-width: 64rem) {
-    .header {
-        padding-top: $sm-12;
-        &-wrap {
-            @include grid-col-18;
-            align-items: flex-start;
-        }
+    .contact-desc {
+        grid-column-end: 17;
     }
-
+    
+    .heading {
+        font-size: 3rem;
+        line-height: 4.125rem;
+    }
+    
     .logo {
         width: min(2.5rem);
     }
 
-    .nav,
-    .phone {
+    .nav, .phone {
         display: block;
     }
 
@@ -591,12 +574,12 @@ form {
 
     .nav {
         grid-column-start: 13;
-        &__list {
-            gap: 0.5rem;
-            @include flex(flex);
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    }
+
+    .nav__list {
+        gap: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .phone {
@@ -625,5 +608,114 @@ form {
     .btn {
         font-size: 1rem;
         line-height: 140%;
+    }
+
+    .subheading {
+        font-size: 2.25rem;
+        line-height: 3.125rem;
+    }
+}
+
+
+@media screen and (min-width: 78.75rem) {
+    .title {
+        margin-bottom: 0;
+        grid-column: 10 span;
+    }
+
+    .intro__text {
+        margin-bottom: 0;
+        grid-row: 2 / 3;
+        grid-column: 6 span;
+    }
+
+    .btn {
+        grid-column-end: 19;
+        grid-column-start: 17;
+    }
+
+    .btn {
+        margin-bottom: 0;
+    }
+
+    .heading-indent {
+        margin-bottom: 2rem;
+    }
+
+    .heading {
+        grid-column-start: 1;
+        grid-column-end: 8;
+    }
+
+    .heading, .subheading {
+        margin-bottom: 0;
+    }
+
+    .about-wrap {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(18, 1fr);
+    }
+
+    .about-inner {
+        grid-column-end: 15;
+    }
+
+    .col {
+        grid-column-start: 10;
+        grid-column-end: 18;
+    }
+
+    .about-box-text {
+        margin-bottom: 2.75rem;
+    }
+
+    .benefits {
+        gap: 1.5rem;
+    }
+
+    .benefits__subtitle {
+        font-size: 2.25rem;
+        line-height: 3.125rem;
+    }
+
+    .img:nth-child(4) {
+        height: auto;
+        grid-row: 2 span;
+        grid-column-start: 10;
+        grid-column-end: 19;
+    }
+
+    .img.desktop {
+        display: block;
+        grid-column: 4 span;
+    }
+
+    .steps__item {
+        gap: 1.25rem;
+    }
+
+    .grid-col-6 {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .steps .subheading {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .steps .text {
+        grid-column-start: 4;
+        grid-column-end: 7;
+    }
+
+    .contact__img {
+        grid-column: 7 span;
+        display: block;
     }
 }
