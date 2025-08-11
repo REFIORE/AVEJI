@@ -1,4 +1,4 @@
-mixin works__card(image)
+mixin projects__card(image)
     li.projects__item
         .projects__img
             img(src=image, alt="tv")
@@ -66,17 +66,17 @@ main.main
                         li.steps__item.grid-col-6
                             h3.subheading Производство и монтаж
                             p.text Производство занимает от 15 рабочих дней, в зависимости от сложности и объёма. Монтажом тоже занимаемся самостоятельно. Ведь мы это сделаем быстро и аккуратно.
-    section.works
+    section.projects
         .container
             h2.heading.heading-indent Проекты
         .container.projects-container
             ul.projects-list
-                +works__card('../media/projects/1.jpg')
-                +works__card('../media/projects/2.jpg')
-                +works__card('../media/projects/3.jpg')
-                +works__card('../media/projects/4.jpg')
-                +works__card('../media/projects/5.jpg')
-                +works__card('../media/projects/6.jpg')
+                +projects__card('../media/projects/1.jpg')
+                +projects__card('../media/projects/2.jpg')
+                +projects__card('../media/projects/3.jpg')
+                +projects__card('../media/projects/4.jpg')
+                +projects__card('../media/projects/5.jpg')
+                +projects__card('../media/projects/6.jpg')
     section.reviews
         .container
             h2.heading.heading-indent Отзывы
@@ -96,13 +96,13 @@ main.main
                     form.form(action="#")
                         .form-inner
                             .form-group
-                                input.input(type="text")
+                                input.input(type="text", id="name")
                                 label.label.text(for="name") Имя
                             .form-group
-                                input.input(type="email")
+                                input.input(type="email", id="email")
                                 label.label.text(for="email") E-mail
                             .form-group
-                                input.input(type="tel")
+                                input.input(type="tel", id="phone")
                                 label.label.text(for="phone") Телефон
                         button.btn-primary.text Отправить заявку
                     ul.contact-download

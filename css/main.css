@@ -5,16 +5,45 @@
 
 .btn {
     position: relative;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
     align-items: flex-end;
     display: inline-flex;
     text-transform: uppercase;
     color: #212529;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    color: #CBC6B2;
+    transition-property: all;
+    transition-duration: 0.3;
+}
+
+
+.btn-primary {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: 0.75rem 1.25rem;
+    transition: 0.3s;
+    background: #212529;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #212529;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+}
+
+.btn-primary:is(:hover, :focus) {
+    background: #DDD7C0;
+}
+
+.btn-primary:is(:hover, :active, :focus) {
+    color: #212529;
 }
 
 .img {
@@ -77,30 +106,6 @@
     object-fit: cover;
 }
 
-.btn-primary {
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    padding: 0.75rem 1.25rem;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    background: #212529;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    color: #212529;
-    font-weight: 400;
-    font-family: "Roboto", sans-serif;
-    color: #ffffff;
-}
-
 .form-group {
     margin-bottom: 1rem;
     position: relative;
@@ -111,10 +116,13 @@
     padding-bottom: 0.75rem;
     width: 100%;
     display: block;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
     background: #ffffff;
     border-bottom: 1px solid #212529;
+    transition: 0.3s;
+}
+
+.input:focus {
+    border-bottom: 1px solid #DDD7C0;
 }
 
 .label {
@@ -122,8 +130,12 @@
     top: 0;
     left: 0;
     display: block;
-    -webkit-transition: 0.3s;
     transition: 0.3s;
+}
+
+.input:focus ~ .label, .input:valid {
+    top: -1rem;
+    font-size: 0.813rem;
 }
 
 .contact-download {
@@ -135,4 +147,8 @@
 .contact-download-item {
     width: 121px;
     height: 36px;
+}
+
+.benefits__subtitle {
+    margin: 0;
 }
